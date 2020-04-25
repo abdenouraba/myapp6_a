@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 public class Activity3 extends AppCompatActivity {
 
-    private ImageView geo_img,butn_arabe,butn_math,heur;
-    Intent intent_ara,intent_mat,intent_time;
+    private ImageView geo_img,butn_arabe,butn_math,heur,anglais,francais;
+    Intent intent_ara,intent_mat,intent_time,inten_anglais,intent_francais;
 
     @Override
 
@@ -22,10 +22,30 @@ public class Activity3 extends AppCompatActivity {
         intent_ara=new Intent(this,arabe.class);
         final Intent intent_mat= new Intent(this,Math.class);
         intent_time= new Intent(this,activity_time.class);
+        inten_anglais=new Intent(this,activity_anglais.class);
+        intent_francais=new Intent(this,francais_activity.class);
 
 
         butn_arabe=findViewById(R.id.butn_arabe);
         butn_math=findViewById(R.id.butn_math);
+        anglais=findViewById(R.id.anglias);
+        francais=findViewById(R.id.francais);
+        francais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent_francais);
+                finish();
+            }
+        });
+
+
+        anglais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(inten_anglais);
+                finish();
+            }
+        });
         heur=findViewById(R.id.heur);
         heur.setOnClickListener(new View.OnClickListener() {
             @Override

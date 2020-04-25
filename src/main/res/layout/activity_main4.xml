@@ -9,9 +9,9 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="83dp"
-        android:text="اختر الجواب الصحيح"
-        android:textAlignment="gravity"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="what color is this?"
+        android:textAlignment="gravity" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -19,7 +19,7 @@
         android:layout_height="215dp"
         android:layout_below="@+id/textView"
         android:layout_marginTop="29dp"
-        app:srcCompat="@drawable/clock" />
+        app:srcCompat="@drawable/pen" />
 
     <Button
         android:id="@+id/Answer1"

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class activity_time extends AppCompatActivity {
+public class Main4Activity extends AppCompatActivity {
     private ImageView questionImage;
     private Button answer1;
     private Button answer2;
@@ -26,17 +26,24 @@ public class activity_time extends AppCompatActivity {
     ArrayList<ArrayList<String>> quizArray = new ArrayList<>();
     String quizData[][] = {
 
-            {"a12_00", "12:00", "02:15", "14:45", "15:20"},
-            {"a07_00", "07:00", "16:40", "21:10", "10:30"},
-            {"a02_00", "14:00", "17:25", "18:35", "13:00"},
-            {"a10_20", "10:20", "22:30", "11:00", "18:50"},
-            {"a12_30", "00:30", "19:20", "08:40", "04:30"},
+            {"white", "white", "green", "blue", "yellow"},
+            {"red", "red", "black", "orange", "brown"},
+            {"green", "green", "white", "blue", "yellow"},
+            {"blue", "blue", "red", "black", "orange"},
+            {"yellow", "yellow", "green", "white", "purple"},
+            {"black", "black", "blue", "red", "pink"},
+            {"orange", "orange", "yellow", "green", "white"},
+            {"purple", "purple", "black", "blue", "red"},
+            {"pink", "pink", "orange", "yellow", "green"},
+            {"brown", "brown", "red", "purple", "blue"},
+
+
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_time);
+        setContentView(R.layout.activity_main3);
         questionImage = findViewById(R.id.imageView);
         answer1 = findViewById(R.id.Answer1);
         answer2 = findViewById(R.id.Answer2);
@@ -111,18 +118,18 @@ public class activity_time extends AppCompatActivity {
 
         if (btnText.equals(rightAnswer)) {
 
-            alertTitle = "صحيح";
+            alertTitle = "correct";
             rightAnswerCount++;
 
         } else {
 
-            alertTitle = "خطأ";
+            alertTitle = "incorrect";
         }
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(alertTitle);
-        builder.setMessage("الجواب الصحيح : " + rightAnswer);
+        builder.setMessage("the correct answer : " + rightAnswer);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -142,15 +149,15 @@ public class activity_time extends AppCompatActivity {
 
     public void showResult() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("النتيجة");
-        builder.setMessage(rightAnswerCount + " / 5");
-        builder.setPositiveButton("حاول ثانيا", new DialogInterface.OnClickListener() {
+        builder.setTitle("result");
+        builder.setMessage(rightAnswerCount + " / 10");
+        builder.setPositiveButton("try again", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 recreate();
             }
         });
-        builder.setNegativeButton("خروج", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("exit", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 finish();
